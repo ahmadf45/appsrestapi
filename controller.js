@@ -63,7 +63,7 @@ exports.ubah = function(req, res){
 
 //delete data by id
 exports.hapus = function(req, res){
-    var id = req.body.id;
+    let id = req.headers.id;
     connection.query('DELETE FROM kontak WHERE id = ?', [id], function(error, rows, fields){
         if (error) {
             connection.log(error);
